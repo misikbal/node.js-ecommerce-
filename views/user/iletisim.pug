@@ -1,1 +1,53 @@
-p merhaba
+html 
+    head
+        link(rel="stylesheet" href="/css/iletisim.css")
+        link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.1/css/bootstrap.min.css')
+
+    body
+
+
+        section#contact
+            h1.section-header Contact
+            .contact-wrapper
+                // Left contact page
+                form#contact-form.form-horizontal(role='form')
+                    .form-group
+                        .col-sm-12
+                            input#name.form-control(type='text' placeholder='NAME' name='name' value='' required='')
+                    .form-group
+                        .col-sm-12
+                            input#email.form-control(type='email' placeholder='EMAIL' name='email' value='' required='')
+                    textarea.form-control(rows='10' placeholder='MESSAGE' name='message' required='')
+                    button#submit.btn.btn-primary.send-button(type='submit' value='SEND')
+                        .alt-send-button
+                            i.fa.fa-paper-plane
+                            span.send-text SEND
+                // Left contact page
+                .direct-contact-container
+                    ul.contact-list
+                        li.list-item
+                            i.fa.fa-map-marker.fa-2x
+                                span.contact-text.place City, State
+                        li.list-item
+                            i.fa.fa-phone.fa-2x
+                                span.contact-text.phone
+                                    a(href='tel:1-212-555-5555' title='Give me a call') (212) 555-2368
+                        li.list-item
+                            i.fa.fa-envelope.fa-2x
+                                span.contact-text.gmail
+                                    a(href='mailto:#' title='Send me an email') hitmeup@gmail.com
+                    hr
+                    ul.social-media-list
+                        li
+                            a.contact-icon(href='#' target='_blank')
+                                i.fa.fa-github(aria-hidden='true')
+                        li
+                            a.contact-icon(href='#' target='_blank')
+                                i.fa.fa-codepen(aria-hidden='true')
+                        li
+                            a.contact-icon(href='#' target='_blank')
+                                i.fa.fa-twitter(aria-hidden='true')
+                        li
+                            a.contact-icon(href='#' target='_blank')
+                                i.fa.fa-instagram(aria-hidden='true')
+
