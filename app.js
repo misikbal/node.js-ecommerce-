@@ -6,6 +6,7 @@ const path = require("path");
 const mongoose = require("mongoose");
 
 const userRoutes = require("./router/user");
+const adminRoutes = require("./router/admin");
 app.set("view engine", "pug");
 app.set("views", "./views");
 port=8000
@@ -26,4 +27,6 @@ mongoose.connect(mongodbsession).then(deger=>{
 app.use(bodyparser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "wwwroot"), { maxAge: 86400000 }));
 app.use(express.json())
+
 app.use(userRoutes)
+app.use("/admin",adminRoutes)
