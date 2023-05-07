@@ -11,7 +11,7 @@ app.set("view engine", "pug");
 app.set("views", "./views");
 port=8000
 
-const mongodbsession="mongodb+srv://springdayAdmin:A1b2c3d4.@cluster0.pwmu2.mongodb.net/?retryWrites=true&w=majority"
+const mongodbsession="mongodb+srv://mikbals:A1b2c3d4.@cluster0.nwldvnd.mongodb.net/?retryWrites=true&w=majority"
 
 mongoose.connect(mongodbsession).then(deger=>{
     console.log("Veri tabanına bağlandı.")
