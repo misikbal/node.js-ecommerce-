@@ -1,0 +1,23 @@
+html 
+    head 
+        title iletisim 
+        link(rel="stylesheet", href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css", integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N", crossorigin="anonymous")
+    body 
+        .container.mt-5.text-center
+            h1.display-3 İletişim Sayfası
+            if(action==="send")
+                .alert.alert-success.alert-dismissible.fade.show(role='alert')
+                    strong Mesajınız
+                    |  Başarılı Bir Şekilde Gönderildi.
+                    button.close(type='button' data-dismiss='alert' aria-label='Close')
+                        span(aria-hidden='true') x
+            if(action==="mail")
+                .alert.alert-danger.alert-dismissible.fade.show(role='alert')
+                    strong Lütfen Geçerli Bir Mail Giriniz
+                    button.close(type='button' data-dismiss='alert' aria-label='Close')
+                        span(aria-hidden='true') x
+            form(action="/iletisim" method="POST")
+                input(name="isim" type="text" placeholder="Adınızı Giriniz").form-control.mt-5         
+                input(name="gmail" type="text" placeholder="Gmail Adersini  Giriniz").form-control.mt-5
+                textarea(name="mesaj" placeholder="Mesajınızı Giriniz" rows="3").form-control.mt-5
+                input(type="submit").btn.btn-primary.mt-5
